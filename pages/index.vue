@@ -52,7 +52,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import AppHeader from '../components/AppHeader';
+import AppHeader from "@/components/AppHeader.vue";
 
 export default Vue.extend({
   name: 'IndexPage',
@@ -68,7 +68,6 @@ export default Vue.extend({
   data() {
     return {
       selectedColors: [ "red", "blue", "cyan", "gray", "green", "yellow" ],
-
       selectedShapes: [ "oval", "circle", "square", "triangle", "rectangle" ],
       computedKey: 0,
     }
@@ -76,21 +75,23 @@ export default Vue.extend({
 
   computed: {
     filteredData() {
-      return this.coloredShapes.data
-      if (this.selectedColors.length === 0 && this.selectedShapes.length === 0) {
-        return this.coloredShapes
+      if (
+        this.selectedColors.length === 0 &&
+        this.selectedShapes.length === 0
+      ) {
+        return null;
       } else if (
         this.selectedColors.length === 0 &&
         this.selectedShapes.length > 0
       ) {
-        console.log('sjdkj')
-        return this.coloredShapes
+        return this.coloredShapes.data
       } else if (
         this.selectedColors.length > 0 &&
         this.selectedShapes.length === 0
       ) {
-        console.log('sjdkj')
-        return this.coloredShapes
+        return this.coloredShapes.data
+      } else {
+        return this.coloredShapes.data
       }
     },
   },
