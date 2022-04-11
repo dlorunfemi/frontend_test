@@ -39,7 +39,7 @@
         <h5 class="title">All Oval Items:</h5>
         <div class="grids">
           <div
-            v-for="data in filteredData"
+            v-for="data, index in filteredData"
             :key="index"
             class="grid"
           ><span :class="[data.shape]" :style="{ '--shape-color': data.color }"></span></div>
@@ -73,27 +73,28 @@ export default Vue.extend({
       computedKey: 0,
     }
   },
+
   computed: {
     filteredData() {
-      console.log(this.selectedShapes.length)
-      console.log(this.selectedColors.length)
-        return this.coloredShapes.data
-      if (this.selectedColors.length == 0 && this.selectedShapes.length == 0) {
-        console.log('zeror')
+      return this.coloredShapes.data
+      if (this.selectedColors.length === 0 && this.selectedShapes.length === 0) {
         return this.coloredShapes
       } else if (
-        this.selectedColors.length == 0 &&
+        this.selectedColors.length === 0 &&
         this.selectedShapes.length > 0
       ) {
+        console.log('sjdkj')
         return this.coloredShapes
       } else if (
         this.selectedColors.length > 0 &&
-        this.selectedShapes.length == 0
+        this.selectedShapes.length === 0
       ) {
+        console.log('sjdkj')
         return this.coloredShapes
       }
     },
   },
+
   methods: {
     toggleColor(evt) {
       this.computedKey++;
@@ -107,6 +108,7 @@ export default Vue.extend({
         this.selectedColors.push(elColor)
       }
     },
+
     toggleShape(evt) {
       this.computedKey++;
       const el = evt.target

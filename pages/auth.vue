@@ -2,10 +2,21 @@
   <div>
     <form @submit.prevent>
       <label for="username">Username</label>
-      <input v-model="user.username" id="username" type="text" />
+      <input
+        id="username"
+        v-model="user.username"
+        type="text"
+      />
       <label for="password">Password</label>
-      <input v-model="user.password" id="password" type="text" />
-      <button @click="login" :disabled="!user.username || !user.password">
+      <input
+        id="password"
+        v-model="user.password"
+        type="text"
+      />
+      <button
+        :disabled="!user.username || !user.password"
+        @click="login"
+      >
         Login
       </button>
     </form>
