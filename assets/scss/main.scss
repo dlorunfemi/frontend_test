@@ -1,0 +1,21 @@
+
+
+@import "reset";
+@import "grid";
+@import "colors";
+@import "shapes";
+
+.title {
+  color: #0000ff;
+}
+h2.title {
+  color: #000;
+  font-size: 2rem;
+  font-weight: 700;
+}
+h5.title {
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+

@@ -1,0 +1,28 @@
+.colors {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  .color {
+    background: var(--color);
+    cursor: pointer;
+    border: 1px solid #000;
+    border-radius: 100%;
+    padding: 1rem;
+    margin: 1rem 1.5rem;
+    filter: contrast(50%);
+    &:first-child {
+      margin-left: 0;
+    }
+    &.selected {
+      filter: contrast(100%);
+      border: none;
+      filter: drop-shadow(0 0 0.75rem brown);
+    }
+    &.selected:hover,
+    &.selected:focus,
+    &:hover,
+    &:focus {
+      filter: brightness(50%);
+    }
+  }
+}
