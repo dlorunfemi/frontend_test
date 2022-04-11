@@ -19,7 +19,7 @@ export default Vue.extend({
       this.$router.push({ name: 'auth' })
     }
   }
-}
+})
 </script>
 
 <style lang="scss">

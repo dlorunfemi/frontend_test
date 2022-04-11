@@ -61,7 +61,7 @@ export default Vue.extend({
     AppHeader
   },
   async asyncData({ $content }) {
-    const coloredShapes:any = await $content('coloredShapes').fetch()
+    const coloredShapes: {} = await $content('coloredShapes').fetch()
 
     return { coloredShapes }
   },
