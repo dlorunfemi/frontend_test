@@ -23,7 +23,8 @@
   </div>
 </template>
 <script>
-export default {
+import Vue from 'vue';
+export default Vue.extend({
   data() {
     return {
       user: {
@@ -39,7 +40,7 @@ export default {
       this.$router.push({ name: 'index' })
     }
   }
-}
+});
 </script>
 <style scoped>
 div {
