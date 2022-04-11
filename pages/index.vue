@@ -61,7 +61,7 @@ export default Vue.extend({
     AppHeader
   },
   async asyncData({ $content }) {
-    const coloredShapes = await $content('coloredShapes').fetch()
+    const coloredShapes:any = await $content('coloredShapes').fetch()
 
     return { coloredShapes }
   },
@@ -97,7 +97,7 @@ export default Vue.extend({
   },
 
   methods: {
-    toggleColor(evt) {
+    toggleColor(evt: { target: any; }) {
       this.computedKey++;
       const el = evt.target
       const elColor = el.getAttribute('data-key')
@@ -110,7 +110,7 @@ export default Vue.extend({
       }
     },
 
-    toggleShape(evt) {
+    toggleShape(evt: { target: any; }) {
       this.computedKey++;
       const el = evt.target
       const elShape = el.getAttribute('data-key')
